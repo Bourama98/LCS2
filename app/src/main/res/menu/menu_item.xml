@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/aboutUS"
+        android:icon="@drawable/ic_menu"
+        android:title="About US"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/contactUS"
+        android:title="Contact US"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/rateUS"
+        android:title="Rate US"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/findUS"
+        android:title="Find US"
+        app:showAsAction="never"
+        >
+        <menu>
+            <item
+                android:id="@+id/ourLocations"
+                android:title="Locations"
+                app:showAsAction="never"
+                />
+            <item
+                android:id="@+id/onFaceBook"
+                android:title="Find Us on FaceBook"
+                app:showAsAction="never"
+                />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/orderHistory"
+        android:title="Order History"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/calendar"
+        android:title="Calendar"
+        app:showAsAction="never"
+        />
+
+</menu>

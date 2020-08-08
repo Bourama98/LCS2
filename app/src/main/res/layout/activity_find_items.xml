@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:background="#C8FAF5"
+    tools:context=".ItemDetail">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/images"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:subtitleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        android:elevation="2dp">
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:background="@android:drawable/ic_search_category_default" />
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="260dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="130dp"
+            android:backgroundTint="#F1EEEE"
+            android:ems="10"
+            android:hint="Find products"
+            android:inputType="textPersonName"
+            android:paddingLeft="80dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="?android:attr/colorForegroundInverse" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/com_facebook_tooltip_black_background"
+            android:backgroundTint="#BCAA8B70"
+            android:text="@string/search"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="35dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_menu"
+        android:elevation="2dp"
+        android:onClick="showMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        tools:ignore="OnClick">
+
+    </ImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/home_profile_pic"
+        android:layout_width="68dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher_round"
+        app:civ_border_color="@android:color/white"
+        android:elevation="2dp"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:nestedScrollingEnabled="true"
+        android:scrollbarStyle="insideInset"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="266dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="50dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+
+
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="222dp" />
+    </ScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="end"
+        app:backgroundTint="@color/colorAccent"
+        app:hideOnScroll="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:navigationIcon="@drawable/back_button"
+        tools:ignore="BottomAppBar,MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <TextView
+            android:id="@+id/cartcount"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/shopping_cart2"
+            android:paddingTop="14dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:ignore="InvalidId" />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="42dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/location2"
+            android:onClick="storeLocations" />
+
+        <TextView
+            android:id="@+id/logOut"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/logout_button_two"
+
+            />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+</androidx.constraintlayout.widget.ConstraintLayout>

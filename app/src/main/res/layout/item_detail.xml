@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C8FAF5"
+    tools:context=".ItemDetail">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/images"
+        android:textAlignment="center"
+        app:subtitleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:background="@android:drawable/ic_search_category_default" />
+
+        <EditText
+            android:id="@+id/searchInput2"
+            android:layout_width="260dp"
+            android:layout_height="49dp"
+            android:backgroundTint="#F1EEEE"
+            android:ems="10"
+            android:hint="Find products"
+            android:inputType="textPersonName"
+            android:layout_marginTop="130dp"
+            android:paddingLeft="80dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="?android:attr/colorForegroundInverse"
+           />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/com_facebook_tooltip_black_background"
+            android:backgroundTint="#BCAA8B70"
+            android:onClick="Search"
+            android:text="@string/search"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+           android:layout_marginTop="130dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/home_profile_pic"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher_round"
+        app:civ_border_color="@android:color/white"
+
+        app:civ_border_width="3dp"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="180dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="end"
+
+        app:backgroundTint="@color/colorAccent"
+        app:hideOnScroll="true"
+        app:navigationIcon="@drawable/back_button"
+        tools:ignore="BottomAppBar,MissingConstraints"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="679dp">
+
+        <TextView
+            android:id="@+id/cartCount"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/shopping_cart2"
+            android:paddingTop="14dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:ignore="InvalidId" />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="42dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/location2"
+             />
+
+        <TextView
+            android:id="@+id/logOut"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/logout_button_two"
+
+             />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+</androidx.constraintlayout.widget.ConstraintLayout>
